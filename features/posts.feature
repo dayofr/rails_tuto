@@ -4,10 +4,10 @@ Feature: Manage posts
   I want to create and manage posts
 
   Scenario: Posts List
-    Given I have posts titled Pizza, Breadsticks
+    Given I have posts titled Paris, Marseille
     When I go to the list of posts
-    Then I should see "Pizza"
-    And I should see "Breadsticks"
+    Then I should see "Paris"
+    And I should see "Marseille"
 
   Scenario: Create Valid Post
     Given I have no posts
