@@ -1,6 +1,9 @@
-Given /^I have posts titled (.+)$/ do |names|
-  names.split(', ').each do |name|
-    Post.create!(:name => name)
+require 'coveralls'
+Coveralls.wear!('rails')
+
+Given(/^(?:|I )have the posts:$/) do |posts|
+  posts.hashes.each do |post|
+    Post.create!(:name => post[:name], :description => post[:description])
   end
 end
 
@@ -19,11 +22,11 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
   end
 end
 
-Given(/^I have no posts$/) do
+Given(/^(?:|I )have no posts$/) do
   Post.delete_all
 end
 
-When(/^I add posts:$/) do |posts|
+When(/^(?:|I )add posts:$/) do |posts|
   posts.hashes.each do |post|
     visit url_for :controller => 'posts', :action => 'new'
     fill_in 'post_name', :with => post[:name]
@@ -33,6 +36,22 @@ When(/^I add posts:$/) do |posts|
   end
 end
 
-Then /^I should have ([0-9]+) post/ do |count|
+Then /^(?:|I )should have ([0-9]+) post/ do |count|
   Post.count.should == count.to_i
+end
+
+When(/^(?:|I )update the title "(.*?)" to "(.*?)"$/) do |old, new|
+  id = Post.where(name: old).first.id
+  visit url_for :controller => 'posts', :action => 'edit', :id => id
+  fill_in 'post_name', :with => new
+  click_button 'Update Post'
+  step 'I should see "Post was successfully updated."'
+end
+
+Then(/^(?:|I )should have a post "(.*?)"$/) do |name|
+  assert Post.where(name: name).size == 1
+end
+
+Then(/^(?:|I )shouldn't have a post "(.*?)"$/) do |name|
+  assert Post.where(name: name).size == 0
 end
