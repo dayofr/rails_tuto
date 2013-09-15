@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext', '~> 1.9.2'
 
+gem 'coveralls', require: false
+
 group :development do
   gem 'rack-mini-profiler'
   gem 'better_errors'
@@ -38,6 +40,7 @@ group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'simplecov', '~> 0.7.1'
 end
 
 group :doc do
