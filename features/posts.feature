@@ -14,7 +14,7 @@ Feature: Manage posts
 
   Scenario: Create Valid Post
     Given I have no posts
-    When I add posts:
+    When I add posts with success:
       | name  | description |
       | Dayo | Hello boy   |
     Then I should see "Dayo"
@@ -23,17 +23,34 @@ Feature: Manage posts
 
   Scenario: Create 2 Valid Post
     Given I have no posts
-    When I add posts:
+    When I add posts with success:
       | name | description |
       | Dayo | Hello boy    |
       | Blog | Bonjour le monde |
     Then I should have 2 post
 
-  Scenario: Update a Post
+  Scenario: Create Invalid Post
+    Given I have no posts
+    When I add posts with failure:
+      | name  | description |
+      |       | Hello boy   |
+    Then I should see "Name can't be blank"
+    And I should have 0 post
+
+  Scenario: Update a Valid Post
     Given I have the posts:
       | name  | description |
       | Dayo | Hello boy   |
-    When I update the title "Dayo" to "Hello"
+    When I update the title "Dayo" to "Hello" with success
     Then I shouldn't have a post "Dayo"
     And I should have a post "Hello"
+    And I should have 1 post
+
+  Scenario: Update an Invalid Post
+    Given I have the posts:
+      | name  | description |
+      | Dayo | Hello boy   |
+    When I update the title "Dayo" to "" with failure
+    Then I should see "Name can't be blank"
+    And I should have a post "Dayo"
     And I should have 1 post
