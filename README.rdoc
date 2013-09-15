@@ -1,6 +1,6 @@
 == README
 
-{<img src="https://travis-ci.org/dayofr/rails_tuto.png?branch=master" alt="Build Status" />}[https://travis-ci.org/dayofr/rails_tuto] {<img src="https://gemnasium.com/dayofr/rails_tuto.png" alt="Dependency Status" />}[https://gemnasium.com/dayofr/rails_tuto]
+{<img src="https://travis-ci.org/dayofr/rails_tuto.png?branch=master" alt="Build Status" />}[https://travis-ci.org/dayofr/rails_tuto] {<img src="https://gemnasium.com/dayofr/rails_tuto.png" alt="Dependency Status" />}[https://gemnasium.com/dayofr/rails_tuto]{<img src="https://coveralls.io/repos/dayofr/rails_tuto/badge.png?branch=master" alt="Coverage Status" />}[https://coveralls.io/r/dayofr/rails_tuto?branch=master]{<img src="https://codeclimate.com/github/dayofr/rails_tuto.png" />}[https://codeclimate.com/github/dayofr/rails_tuto]
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
