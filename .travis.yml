@@ -1,10 +1,15 @@
 language: ruby
 rvm:
-  -  2.0.0
-
+- 2.0.0
 services:
-  - mongodb
-
+- mongodb
 script:
-  - RAILS_ENV=test
-  - bundle exec rake cucumber
+- RAILS_ENV=test
+- bundle exec rake cucumber
+deploy:
+  provider: heroku
+  api_key:
+    secure: sFuQnA0KaRib+0bR6tGEhrB2YYJLFxDUSRoICm5W5kGD1YBxnoadJpbMi5IP5ARGA6hc7OKzSaYDfM4+k5FbIwSuMscQjJy/ZOHiIz9xyBMBVkp0+zdOdF3iWZEDPWwLqlkv8ZByOsZx9eOIQSlSymkyw5x5oxP+oJH6PoD7LY4=
+  app: sleepy-meadow-7849
+  on:
+    repo: dayofr/rails_tuto
