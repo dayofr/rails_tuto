@@ -32,6 +32,9 @@ gem 'coveralls', require: false
 
 gem 'newrelic_rpm'
 
+gem 'less-rails-bootstrap'
+gem 'therubyracer'
+
 group :development do
   gem 'rack-mini-profiler'
   gem 'better_errors'
