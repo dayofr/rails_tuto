@@ -11,5 +11,6 @@ deploy:
   api_key:
     secure: sFuQnA0KaRib+0bR6tGEhrB2YYJLFxDUSRoICm5W5kGD1YBxnoadJpbMi5IP5ARGA6hc7OKzSaYDfM4+k5FbIwSuMscQjJy/ZOHiIz9xyBMBVkp0+zdOdF3iWZEDPWwLqlkv8ZByOsZx9eOIQSlSymkyw5x5oxP+oJH6PoD7LY4=
   app: sleepy-meadow-7849
+  run: rake assets:precompile
   on:
     repo: dayofr/rails_tuto
