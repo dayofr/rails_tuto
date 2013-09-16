@@ -30,6 +30,8 @@ gem 'bson_ext', '~> 1.9.2'
 
 gem 'coveralls', require: false
 
+gem 'newrelic_rpm'
+
 group :development do
   gem 'rack-mini-profiler'
   gem 'better_errors'
