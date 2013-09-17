@@ -8,9 +8,11 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 3.0.4'
 gem 'turbolinks', '~> 1.3.0'
 gem 'less-rails-bootstrap'
-gem 'therubyracer'
-gem 'rails_12factor'
+gem 'therubyracer', '~> 0.12.0'
+gem 'rails_12factor', "~> 0.0.2"
 gem 'jbuilder', '~> 1.2'
+
+gem 'haml', '~> 4.0.3'
 
 gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext', '~> 1.9.2'
@@ -23,6 +25,7 @@ group :development do
   gem 'rack-mini-profiler'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'haml-rails', '~> 0.4.0'
 end
 
 group :test do
